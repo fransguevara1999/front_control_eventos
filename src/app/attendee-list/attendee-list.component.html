@@ -1,0 +1,18 @@
+<h2>Attendees for Event {{ eventId }}</h2>
+
+<table *ngIf="attendees.length > 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>DNI</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attendee of attendees">
+      <td>{{ attendee.name }}</td>
+      <td>{{ attendee.dni }}</td>
+      </tr>
+  </tbody>
+</table>
+
+<p *ngIf="attendees.length === 0">No attendees registered yet.</p>
