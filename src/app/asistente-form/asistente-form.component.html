@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="asistente.nombre" name="nombre" required>
+    </div>
+    <div>
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" [(ngModel)]="asistente.dni" name="dni" required>
+    </div>
+    <button type="submit">Crear Asistente</button>
+  </form>
+  

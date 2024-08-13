@@ -1,5 +1,6 @@
 export interface Asistente {
-    id: number; 
-    name: string;
-    dni: string; 
-  }
+  id?: number;
+  nombre: string;
+  dni: string;
+  eventIds?: number[]; // Si es necesario
+}

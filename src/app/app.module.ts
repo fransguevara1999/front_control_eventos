@@ -14,7 +14,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { DialogModule } from 'primeng/dialog';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { AppRoutingModule } from './modules/app-routing.module';
-import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { AsistenteFormComponent } from './asistente-form/asistente-form.component'; // Importa HttpClientModule
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientMo
     EventFormComponent,
     EventListComponent,
     AttendeeListComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    AsistenteFormComponent
   ],
   imports: [
     BrowserModule,
