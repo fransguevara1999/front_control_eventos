@@ -1,3 +1,11 @@
-<p-menubar [model]="items"></p-menubar>
+<p-menubar [model]="items" styleClass="custom-menubar"></p-menubar>
 
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<p-footer styleClass="custom-footer">
+  <div class="footer-content">
+    © 2024 Control de Asistencia. Todos los derechos reservados.
+  </div>
+</p-footer>

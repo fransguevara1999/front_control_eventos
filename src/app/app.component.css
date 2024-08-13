@@ -1,12 +1,23 @@
-nav {
-    margin-bottom: 20px;
-  }
-  nav a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #007bff;
-  }
-  nav a.active {
-    font-weight: bold;
-  }
-  
+.custom-menubar {
+  background-color: #2c3e50;  /* Color de fondo personalizado */
+  color: white;
+}
+
+.content {
+  padding: 20px;
+  min-height: calc(100vh - 64px); /* Ajusta según el tamaño del menubar y footer */
+  background-color: #f4f4f4;
+}
+
+.custom-footer {
+  background-color: #2c3e50; /* Color de fondo del footer */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px; /* Ajuste opcional para ancho máximo */
+}

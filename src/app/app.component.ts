@@ -15,7 +15,12 @@ export class AppComponent {
         { label: 'Lista de Eventos', icon: 'pi pi-list', routerLink: '/events' },
         { label: 'Nuevo Evento', icon: 'pi pi-plus', routerLink: '/events/new' }
       ]
+    },
+    {
+      label: 'Asistentes',
+      items: [
+        { label: 'Ver Asistentes', icon: 'pi pi-users', routerLink: '/events/:id/attendees' } // Revisa el routerLink aquí
+      ]
     }
-    // Puedes agregar más elementos al menú si es necesario
   ];
 }
