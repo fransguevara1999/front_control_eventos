@@ -1,14 +1,30 @@
-<div class="p-fluid">
-    <div class="card">
-      <h2>{{ isEditing ? 'Editar Evento' : 'Registrar un nuevo evento' }}</h2> 
+<div class="d-flex justify-content-center align-items-start">
+  <div class="card shadow w-50">
+    
+    <!-- Título del card -->
+    <div class="card-header text-center">
+      <h2 class="mb-0">{{ isEditing ? 'Editar Evento' : 'Registrar un nuevo evento' }}</h2>
+    </div>
+    
+    <div class="card-body">
+      <!-- Formulario -->
       <form (ngSubmit)="onSubmit()"> 
-        <div class="p-field">
-          <label for="name">Nombre del evento:</label>
-          <input id="name" pInputText [(ngModel)]="event.name" name="name" required> 
+
+        <!-- Campo: Nombre del evento -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre del evento:</label>
+          <input 
+            id="name" 
+            class="form-control form-control-sm" 
+            [(ngModel)]="event.name" 
+            name="name" 
+            required 
+            placeholder="Ingrese el nombre del evento"> 
         </div>
-  
-        <div class="p-field">
-          <label for="dateTime">Seleccione fecha y hora del evento:</label>
+
+        <!-- Campo: Fecha y hora del evento -->
+        <div class="mb-3">
+          <label for="dateTime" class="form-label">Fecha y hora:</label>
           <p-calendar 
             id="dateTime" 
             [(ngModel)]="event.startDateTime"
@@ -16,12 +32,22 @@
             [showIcon]="true"
             dateFormat="dd/mm/yy HH:mm"
             [showTime]="true" 
-            hourFormat="24" 
+            hourFormat="24"
+            class="form-control-sm"
+            placeholder="Seleccione la fecha y hora"
           ></p-calendar>
         </div>
-  
-        <p-button label="Guardar" type="submit" icon="pi pi-check" [disabled]="!event.name || !event.startDateTime"></p-button>
+
+        <!-- Botón: Guardar -->
+        <div class="text-center">
+          <button 
+            type="submit" 
+            class="btn btn-success btn-sm"
+            [disabled]="!event.name || !event.startDateTime">
+            <i class="pi pi-check"></i> Guardar
+          </button>
+        </div>
       </form>
     </div>
   </div>
-  
+</div>
