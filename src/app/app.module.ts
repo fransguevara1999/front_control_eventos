@@ -16,6 +16,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AsistenteFormComponent } from './asistente-form/asistente-form.component'; // Importa HttpClientModule
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { AsistenteFormComponent } from './asistente-form/asistente-form.componen
     DialogModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

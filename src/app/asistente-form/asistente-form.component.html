@@ -1,12 +1,20 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" [(ngModel)]="asistente.nombre" name="nombre" required>
-    </div>
-    <div>
-      <label for="dni">DNI:</label>
-      <input type="text" id="dni" [(ngModel)]="asistente.dni" name="dni" required>
-    </div>
-    <button type="submit">Crear Asistente</button>
-  </form>
-  
+<div class="card">
+  <div class="card-header">
+    <h2>Registro de Asistencia para {{ event?.nombre }}</h2> <!-- Muestra el nombre del evento -->
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="asistente.nombre" name="nombre" required class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="dni" class="form-label">DNI:</label>
+        <input type="text" id="dni" [(ngModel)]="asistente.dni" name="dni" required class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar Asistencia</button>
+    </form>
+    <hr />
+    <button (click)="copyLink()" class="btn btn-secondary">Copiar Enlace de Registro</button> <!-- Botón para copiar el enlace -->
+  </div>
+</div>

@@ -1,57 +1,66 @@
 <div class="p-fluid">
     <div class="card">
-        <h2>Lista de Eventos</h2>
-
-        <p-table [value]="events" responsiveLayout="scroll">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha y Hora de Inicio</th>
-                    <th>Fecha y Hora de Fin</th>
-                    <th>Lugar</th>
-                    <th>Acciones</th> 
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-event>
-                <tr>
-                    <td>{{ event.nombre }}</td> <!-- Cambiado de event.name a event.nombre -->
-                    <td>{{ event.fechaHoraInicio | date: 'dd/MM/yyyy HH:mm' }}</td> <!-- Cambiado -->
-                    <td>{{ event.fechaHoraFin | date: 'dd/MM/yyyy HH:mm' }}</td> <!-- Cambiado -->
-                    <td>{{ event.ubicacion }}</td> <!-- Cambiado -->
-                    <td>
-                        <div class="flex flex-row gap-2"> 
-                            <button pButton 
-                                    type="button" 
-                                    icon="pi pi-pencil" 
-                                    class="p-button-rounded p-button-success"
-                                    (click)="editEvent(event)"
-                                    pTooltip="Editar Evento"
-                            ></button>
-                            <button pButton 
-                                    type="button" 
-                                    icon="pi pi-users" 
-                                    class="p-button-rounded p-button-info"
-                                    (click)="viewAttendees(event)"
-                                    pTooltip="Ver Asistentes"
-                            ></button>
-                            <button pButton 
-                                    type="button" 
-                                    icon="pi pi-copy"
-                                    class="p-button-rounded"
-                                    (click)="copyLink(event.attendanceLink)"
-                                    pTooltip="Copiar Enlace de Asistencia"
-                            ></button>
-                            <button pButton 
-                                    type="button" 
-                                    icon="pi pi-qrcode"
-                                    class="p-button-rounded"
-                                    (click)="showQRCode(event.attendanceLink, event.name)" 
-                                    pTooltip="Mostrar QR"
-                            ></button>
-                        </div>
-                    </td>
-                </tr>
-            </ng-template>
-        </p-table>
+      <h2>Lista de Eventos</h2>
+  
+      <p-table [value]="events" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha y Hora de Inicio</th>
+            <th>Fecha y Hora de Fin</th>
+            <th>Lugar</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-event>
+          <tr (click)="selectEvent(event.id)">
+            <td>{{ event.nombre }}</td>
+            <td>{{ event.fechaHoraInicio | date: 'dd/MM/yyyy HH:mm' }}</td>
+            <td>{{ event.fechaHoraFin | date: 'dd/MM/yyyy HH:mm' }}</td>
+            <td>{{ event.ubicacion }}</td>
+            <td>
+              <div class="flex flex-row gap-2">
+                <button pButton 
+                        type="button" 
+                        icon="pi pi-pencil" 
+                        class="p-button-rounded p-button-success"
+                        (click)="editEvent(event)"
+                        pTooltip="Editar Evento">
+                </button>
+                <button pButton 
+                        type="button" 
+                        icon="pi pi-users" 
+                        class="p-button-rounded p-button-info"
+                        (click)="viewAttendees(event)"
+                        pTooltip="Ver Asistentes">
+                </button>
+                <button pButton 
+                        type="button" 
+                        icon="pi pi-copy"
+                        class="p-button-rounded"
+                        (click)="copyLink(event.id)"
+                        pTooltip="Copiar Enlace de Asistencia">
+                </button>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
-</div>
+  
+    <div *ngIf="selectedEventId">
+      <h3>Registrar Asistencia</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="asistente.nombre" name="nombre" required class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="dni" class="form-label">DNI:</label>
+          <input type="text" id="dni" [(ngModel)]="asistente.dni" name="dni" required class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar Asistencia</button>
+      </form>
+    </div>
+  </div>
+  

@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'events/:id', component: EventDetailComponent },
   { path: 'events/:id/edit', component: EventFormComponent },
   { path: 'events/:id/attendees', component: AttendeeListComponent },
-  { path: 'asistentes/new/:eventId', component: AsistenteFormComponent },
+  { path: 'register/:eventId', component: AsistenteFormComponent },
   { path: '**', redirectTo: '/events' }
 ];
 
