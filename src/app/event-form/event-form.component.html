@@ -11,7 +11,8 @@
           <label for="dateTime">Seleccione fecha y hora del evento:</label>
           <p-calendar 
             id="dateTime" 
-            [(ngModel)]="event.startDateTime" 
+            [(ngModel)]="event.startDateTime"
+            name="startDateTime"
             [showIcon]="true"
             dateFormat="dd/mm/yy HH:mm"
             [showTime]="true" 
@@ -19,7 +20,7 @@
           ></p-calendar>
         </div>
   
-        <p-button label="Guardar" icon="pi pi-check" [disabled]="!event.name || !event.startDateTime"></p-button>
+        <p-button label="Guardar" type="submit" icon="pi pi-check" [disabled]="!event.name || !event.startDateTime"></p-button>
       </form>
     </div>
   </div>

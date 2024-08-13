@@ -21,6 +21,7 @@ export class EventService {
   }
 
   createEvent(event: Event): Observable<Event> {
+    console.log('object 111')
     return this.http.post<Event>(this.apiUrl, event);
   }
 

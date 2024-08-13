@@ -14,7 +14,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { DialogModule } from 'primeng/dialog';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { AppRoutingModule } from './modules/app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { AppRoutingModule } from './modules/app-routing.module';
     TableModule,
     FormsModule,
     MenubarModule,
-    DialogModule
+    DialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
