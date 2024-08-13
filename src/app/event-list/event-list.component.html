@@ -14,10 +14,10 @@
             </ng-template>
             <ng-template pTemplate="body" let-event>
                 <tr>
-                    <td>{{ event.name }}</td>
-                    <td>{{ event.startDateTime | date: 'dd/MM/yyyy HH:mm' }}</td> 
-                    <td>{{ event.endDateTime | date: 'dd/MM/yyyy HH:mm' }}</td>
-                    <td>{{ event.location }}</td>
+                    <td>{{ event.nombre }}</td> <!-- Cambiado de event.name a event.nombre -->
+                    <td>{{ event.fechaHoraInicio | date: 'dd/MM/yyyy HH:mm' }}</td> <!-- Cambiado -->
+                    <td>{{ event.fechaHoraFin | date: 'dd/MM/yyyy HH:mm' }}</td> <!-- Cambiado -->
+                    <td>{{ event.ubicacion }}</td> <!-- Cambiado -->
                     <td>
                         <div class="flex flex-row gap-2"> 
                             <button pButton 

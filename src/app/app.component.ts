@@ -19,8 +19,8 @@ export class AppComponent {
     {
       label: 'Asistentes',
       items: [
-        { label: 'Ver Asistentes', icon: 'pi pi-users', routerLink: '/events/:id/attendees' } // Revisa el routerLink aquí
+          { label: 'Ver Asistentes', icon: 'pi pi-users', routerLink: '/events/:id/attendees' }
       ]
-    }
+  }
   ];
 }

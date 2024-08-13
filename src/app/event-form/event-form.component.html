@@ -12,29 +12,45 @@
 
         <!-- Campo: Nombre del evento -->
         <div class="mb-3">
-          <label for="name" class="form-label">Nombre del evento:</label>
+          <label for="nombre" class="form-label">Nombre del evento:</label>
           <input 
-            id="name" 
+            id="nombre" 
             class="form-control form-control-sm" 
-            [(ngModel)]="event.name" 
-            name="name" 
+            [(ngModel)]="event.nombre" 
+            name="nombre" 
             required 
             placeholder="Ingrese el nombre del evento"> 
         </div>
 
-        <!-- Campo: Fecha y hora del evento -->
+        <!-- Campo: Fecha y hora del inicio del evento -->
         <div class="mb-3">
-          <label for="dateTime" class="form-label">Fecha y hora:</label>
+          <label for="fechaHoraInicio" class="form-label">Fecha y hora de inicio:</label>
           <p-calendar 
-            id="dateTime" 
-            [(ngModel)]="event.startDateTime"
-            name="startDateTime"
+            id="fechaHoraInicio" 
+            [(ngModel)]="event.fechaHoraInicio"
+            name="fechaHoraInicio"
             [showIcon]="true"
             dateFormat="dd/mm/yy HH:mm"
             [showTime]="true" 
             hourFormat="24"
             class="form-control-sm"
-            placeholder="Seleccione la fecha y hora"
+            placeholder="Seleccione la fecha y hora de inicio"
+          ></p-calendar>
+        </div>
+
+        <!-- Campo: Fecha y hora del fin del evento -->
+        <div class="mb-3">
+          <label for="fechaHoraFin" class="form-label">Fecha y hora de fin:</label>
+          <p-calendar 
+            id="fechaHoraFin" 
+            [(ngModel)]="event.fechaHoraFin"
+            name="fechaHoraFin"
+            [showIcon]="true"
+            dateFormat="dd/mm/yy HH:mm"
+            [showTime]="true" 
+            hourFormat="24"
+            class="form-control-sm"
+            placeholder="Seleccione la fecha y hora de fin"
           ></p-calendar>
         </div>
 
@@ -43,7 +59,7 @@
           <button 
             type="submit" 
             class="btn btn-success btn-sm"
-            [disabled]="!event.name || !event.startDateTime">
+            [disabled]="!event.nombre || !event.fechaHoraInicio">
             <i class="pi pi-check"></i> Guardar
           </button>
         </div>

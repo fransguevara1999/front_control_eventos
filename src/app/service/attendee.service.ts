@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Asistente } from '../model/Asistente';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +12,6 @@ export class AttendeeService {
   constructor(private http: HttpClient) { }
 
   getAttendeesByEventId(eventId: number): Observable<Asistente[]> {
-    return this.http.get<Asistente[]>(`${this.apiUrl}/event/${eventId}`);
+    return this.http.get<Asistente[]>(`${this.apiUrl}/evento/${eventId}`);
   }
 }

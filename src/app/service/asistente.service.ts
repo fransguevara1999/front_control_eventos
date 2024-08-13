@@ -11,8 +11,11 @@ export class AsistenteService {
 
   constructor(private http: HttpClient) { }
 
-  createAsistente(asistente: Asistente): Observable<Asistente> {
-    return this.http.post<Asistente>(this.apiUrl, asistente);
+  createAsistente(asistente: Asistente, eventId: number): Observable<Asistente> {
+    return this.http.post<Asistente>(`${this.apiUrl}/${eventId}`, asistente);
   }
   
+  registrarAsistencia(eventId: number, asistente: Asistente): Observable<Asistente> {
+    return this.http.post<Asistente>(`${this.apiUrl}/evento/${eventId}/registrar`, asistente);
+  }
 }
